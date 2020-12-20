@@ -2,7 +2,7 @@
 
 
 - Created with stackblitz angular boilerplate 
-- [Visit Demo](https://stackblitz.com/edit/angular-ivy-c3gipl)
+- [Visit Demo](https://angular-ivy-c3gipl.stackblitz.io)
     - Allows branch switching from top-left
 
 - Rxjs branch contains the rxjs subject state implementation

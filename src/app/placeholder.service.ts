@@ -24,12 +24,11 @@ export class PlaceholderService {
   }
 
   updatePost(newPost: Post) {
-    console.log("Udpate caught");
     let curState: PostsState;
     this.getState().subscribe(res => (curState = res));
 
     let foundIndex = curState.posts.findIndex(x => x.id == newPost.id);
-    console.log(foundIndex);
+
     if (foundIndex == -1) {
       return;
     }

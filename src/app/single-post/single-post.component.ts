@@ -9,18 +9,13 @@ import { Post, PostsState } from "../models";
   styleUrls: ["./single-post.component.css"]
 })
 export class SinglePostComponent implements OnInit {
-  public userVisible: boolean = false;
-  @Input() singlePost;
+  @Input() singlePost: Post;
 
   constructor(private placeholderService: PlaceholderService) {}
 
-  ngOnInit() {
-    this.userVisible = this.singlePost.showUser;
-  }
+  ngOnInit() {}
 
   toggleUser() {
-    console.log("toggleclick");
-    console.log(this.singlePost);
     this.placeholderService.updatePost(this.singlePost);
   }
 }

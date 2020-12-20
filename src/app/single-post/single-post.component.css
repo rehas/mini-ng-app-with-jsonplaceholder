@@ -6,10 +6,6 @@
   overflow-x: hidden;
   height: 120px;
 
-  /*Center number in cards*/
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
   color: white;
   font-size: x-small;
 }

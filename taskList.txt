@@ -27,11 +27,12 @@ mini-ng-app-with-jsonplaceholder
 - List steps
     + Setup angular - git -> stackblitz
     + Decide on layout
-        - non-responsive
-        - 10x10
-        - all squares
-    - Get the data
-    - Prep the postlist
+        + non-responsive
+        + 10x10
+        + all squares
+    + Get the data
+    + Prep the postlist
+    - Make everything with rxjs
 
 
 

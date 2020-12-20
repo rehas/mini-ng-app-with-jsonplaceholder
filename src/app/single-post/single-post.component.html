@@ -1,10 +1,10 @@
 <div class="card" (click)="toggleUser()">
-	<h3 *ngIf="!showUser">
-		{{singlePost.id}}
-	</h3>
-	<h3 *ngIf="showUser">
-		{{singlePost.userId}}
-	</h3>
+	<h4 *ngIf="!showUser">
+		PostId : {{singlePost.id}}
+	</h4>
+	<h4 *ngIf="showUser">
+		UserId: {{singlePost.userId}}
+	</h4>
 	<h4>
 		{{singlePost.title}}
 	</h4>

@@ -33,6 +33,7 @@ mini-ng-app-with-jsonplaceholder
     + Get the data
     + Prep the postlist
     - Make everything with rxjs
+    - Make a clear button
 
 
 

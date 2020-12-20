@@ -10,14 +10,17 @@ import { Post } from "../models";
 export class PostGridComponent implements OnInit {
   postList: Post[] = [];
   constructor(private placeholderService: PlaceholderService) {}
-  getPlaceholders() {
-    // ;
-  }
 
   ngOnInit() {
     this.placeholderService.getPlaceHolders().subscribe(posts => {
       this.postList = posts;
     });
     console.log(this.postList);
+  }
+
+  reset() {
+    this.placeholderService.getPlaceHolders().subscribe(posts => {
+      this.postList = posts;
+    });
   }
 }

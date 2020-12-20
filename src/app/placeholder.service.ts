@@ -1,21 +1,41 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Post } from "./models";
-import { Observable } from "rxjs";
+import { Post, PostsState, IPostsState } from "./models";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
-export class PlaceholderService {
-  posts = [];
-
+export class PlaceholderService<PostsState> {
   constructor(private http: HttpClient) {}
 
-  getPosts() {
-    return this.posts;
+  private initialState = { posts: [], showUser: [] };
+
+  private state$ = new BehaviorSubject<IPostsState>(this.initialState);
+
+  getState(): Observable<IPostsState> {
+    return this.state$.asObservable();
   }
 
-  getPlaceHolders(): Observable<Post[]> {
-    return this.http.get<Post[]>("https://jsonplaceholder.typicode.com/posts");
+  setState(newState: IPostsState) {
+    this.state$.next({
+      posts: newState.posts,
+      showUser: newState.showUser
+    });
+  }
+
+  resetState(): void {
+    this.getPlaceHolders();
+  }
+
+  getPlaceHolders(): void {
+    this.http
+      .get<Post[]>("https://jsonplaceholder.typicode.com/posts")
+      .subscribe(res => {
+        this.setState({
+          posts: res,
+          showUser: []
+        });
+      });
   }
 }

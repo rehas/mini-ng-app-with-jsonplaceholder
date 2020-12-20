@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { PlaceholderService } from "../placeholder.service";
-import { Post } from "../models";
+import { Post, PostsState } from "../models";
 
 @Component({
   selector: "app-post-grid",
@@ -9,18 +9,17 @@ import { Post } from "../models";
 })
 export class PostGridComponent implements OnInit {
   postList: Post[] = [];
-  constructor(private placeholderService: PlaceholderService) {}
+  showUser: number[];
+  constructor(private placeholderService: PlaceholderService<PostsState>) {}
 
   ngOnInit() {
-    this.placeholderService.getPlaceHolders().subscribe(posts => {
-      this.postList = posts;
-      console.log(this.postList);
+    this.placeholderService.getState().subscribe(res => {
+      this.postList = res.posts;
+      this.showUser = res.showUser;
     });
   }
 
   reset() {
-    this.placeholderService.getPlaceHolders().subscribe(posts => {
-      this.postList = posts;
-    });
+    this.placeholderService.resetState();
   }
 }

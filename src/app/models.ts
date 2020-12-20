@@ -10,3 +10,17 @@ export class Post {
     this.body = null;
   }
 }
+
+export class PostsState {
+  posts: Post[];
+  showUser: number[];
+  constructor() {
+    this.posts = [];
+    this.showUser = [];
+  }
+}
+
+export interface IPostsState {
+  posts: Post[];
+  showUser: number[];
+}

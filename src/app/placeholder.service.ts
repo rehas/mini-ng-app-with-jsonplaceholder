@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Post } from "./models";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -14,7 +15,7 @@ export class PlaceholderService {
     return this.posts;
   }
 
-  getPlaceHolders() {
+  getPlaceHolders(): Observable<Post[]> {
     return this.http.get<Post[]>("https://jsonplaceholder.typicode.com/posts");
   }
 }

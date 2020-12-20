@@ -9,13 +9,12 @@ import { Post, PostsState } from "../models";
 })
 export class PostGridComponent implements OnInit {
   postList: Post[] = [];
-  showUser: number[];
-  constructor(private placeholderService: PlaceholderService<PostsState>) {}
+  constructor(private placeholderService: PlaceholderService) {}
 
   ngOnInit() {
+    this.placeholderService.getPlaceHolders();
     this.placeholderService.getState().subscribe(res => {
       this.postList = res.posts;
-      this.showUser = res.showUser;
     });
   }
 

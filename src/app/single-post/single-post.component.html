@@ -1,8 +1,8 @@
 <div class="card" (click)="toggleUser()">
-	<h4 *ngIf="!showUser">
+	<h4 *ngIf="!singlePost.showUser">
 		PostId : {{singlePost.id}}
 	</h4>
-	<h4 *ngIf="showUser">
+	<h4 *ngIf="singlePost.showUser">
 		UserId: {{singlePost.userId}}
 	</h4>
 	<h4>

@@ -6,22 +6,37 @@ import { BehaviorSubject, Observable } from "rxjs";
 @Injectable({
   providedIn: "root"
 })
-export class PlaceholderService<PostsState> {
+export class PlaceholderService {
   constructor(private http: HttpClient) {}
 
-  private initialState = { posts: [], showUser: [] };
+  private initialState = new PostsState();
 
-  private state$ = new BehaviorSubject<IPostsState>(this.initialState);
+  private state$ = new BehaviorSubject<PostsState>(this.initialState);
 
-  getState(): Observable<IPostsState> {
+  getState(): Observable<PostsState> {
     return this.state$.asObservable();
   }
 
   setState(newState: IPostsState) {
     this.state$.next({
-      posts: newState.posts,
-      showUser: newState.showUser
+      posts: newState.posts
     });
+  }
+
+  updatePost(newPost: Post) {
+    console.log("Udpate caught");
+    let curState: PostsState;
+    this.getState().subscribe(res => (curState = res));
+
+    let foundIndex = curState.posts.findIndex(x => x.id == newPost.id);
+    console.log(foundIndex);
+    if (foundIndex == -1) {
+      return;
+    }
+
+    curState.posts[foundIndex].showUser = !curState.posts[foundIndex].showUser;
+
+    this.setState(curState);
   }
 
   resetState(): void {
@@ -33,8 +48,7 @@ export class PlaceholderService<PostsState> {
       .get<Post[]>("https://jsonplaceholder.typicode.com/posts")
       .subscribe(res => {
         this.setState({
-          posts: res,
-          showUser: []
+          posts: res
         });
       });
   }

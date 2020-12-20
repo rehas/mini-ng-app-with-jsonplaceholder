@@ -3,9 +3,18 @@
   border: 2px solid white;
   border-radius: 0.2rem;
   overflow-y: hidden;
-  overflow-x: hidden;
   height: 120px;
 
   color: white;
   font-size: x-small;
+  padding: 3px;
+}
+.post-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 15ch;
+}
+.post-body {
+  color: black;
 }

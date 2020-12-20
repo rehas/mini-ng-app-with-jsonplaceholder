@@ -15,7 +15,6 @@ export class PostGridComponent implements OnInit {
     this.placeholderService.getPlaceHolders().subscribe(posts => {
       this.postList = posts;
     });
-    console.log(this.postList);
   }
 
   reset() {

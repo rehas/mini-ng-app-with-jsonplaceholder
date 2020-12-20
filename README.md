@@ -1,6 +1,10 @@
 # mini-ng-app-with-jsonplaceholder
 
+
 - Created with stackblitz angular boilerplate 
+- [Visit Demo](https://stackblitz.com/edit/angular-ivy-c3gipl)
+    - Allows branch switching from top-left
+
 - Rxjs branch contains the rxjs subject state implementation
 - Master branch is without rxjs
 
@@ -12,4 +16,3 @@
 
 - Overall this was fun to work on, it's been a while since creating an angular app from scratch so I've searched for some boiler plate and ended up in stackblitz.
 - Css and overall design can be improved easily (or in other words, it's hard to make it any worse) 🖖
-

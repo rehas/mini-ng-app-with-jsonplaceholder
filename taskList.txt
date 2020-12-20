@@ -32,10 +32,10 @@ mini-ng-app-with-jsonplaceholder
         + all squares
     + Get the data
     + Prep the postlist
-    - Make everything with rxjs
+    + Make everything with rxjs
     + Make a clear button
 
-- Answer generics
++ Answer generics
 
 
 -------------

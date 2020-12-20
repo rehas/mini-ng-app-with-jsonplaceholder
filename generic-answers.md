@@ -44,4 +44,4 @@ do that? (no need to actually do it, just describe the steps you would take)
     2. Minimizing initial data transfer from server. 
     3. Splitting up, minimizing files to be loaded.
     4. Caching less dynamic files.
-5. 
+5. It depends on how much time is being spent during activities related to hardware performance vs software efficiency. If the tasks usually require high memory / cpu then I would opt for the best possible hardware in the market, and even if it comes with a standard image I wouldn't mind. Since if it makes sense to update the image, it's always possible (just takes a bit more time and effort). On the other hand, if the dev system is setup to be working on remote machines and not much is done on local environments, then I'd opt for being able to choose the software set with the team.  

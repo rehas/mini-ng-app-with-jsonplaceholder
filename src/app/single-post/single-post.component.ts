@@ -7,9 +7,14 @@ import { Input } from "@angular/core";
   styleUrls: ["./single-post.component.css"]
 })
 export class SinglePostComponent implements OnInit {
+  public showUser: boolean = false;
   @Input() singlePost;
 
   constructor() {}
 
   ngOnInit() {}
+
+  toggleUser() {
+    this.showUser = !this.showUser;
+  }
 }

@@ -1,3 +1,13 @@
-<p>
-	single-post works! {{singlePost.id}}
-</p>
+<div class="card" (click)="toggleUser()">
+	<h3 *ngIf="!showUser">
+		{{singlePost.id}}
+	</h3>
+	<h3 *ngIf="showUser">
+		{{singlePost.userId}}
+	</h3>
+	<h4>
+		{{singlePost.title}}
+	</h4>
+	<p>{{singlePost.body}}
+	</p>
+</div>

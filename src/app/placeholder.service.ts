@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Post } from "./models";
 
 @Injectable({
   providedIn: "root"
@@ -14,6 +15,6 @@ export class PlaceholderService {
   }
 
   getPlaceHolders() {
-    return this.http.get("https://jsonplaceholder.typicode.com/posts");
+    return this.http.get<Post[]>("https://jsonplaceholder.typicode.com/posts");
   }
 }

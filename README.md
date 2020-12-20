@@ -1,3 +1,2 @@
-# angular-ivy-c3gipl
+# mini-ng-app-with-jsonplaceholder
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-ivy-c3gipl)

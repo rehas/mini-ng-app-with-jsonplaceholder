@@ -1,0 +1,15 @@
+.card {
+  background-color: #32cabe;
+  border: 3px solid white;
+  border-radius: 0.66rem;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100px;
+
+  /*Center number in cards*/
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  color: white;
+  font-size: x-small;
+}
